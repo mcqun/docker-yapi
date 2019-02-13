@@ -34,9 +34,9 @@ ENV YAPI_VERSION=1.5.0
 RUN mkdir -p vendors \
   && curl -SL "https://github.com/YMFE/yapi/archive/v${YAPI_VERSION}.tar.gz" -o yapi.tar.gz \
   && tar -xvf yapi.tar.gz -C vendors  --strip-components=1 \
-  && rm -rf yapi.tar.gz \
-  && cd vendors \
-  && npm i
+  && rm -rf yapi.tar.gz 
+
+WORKDIR /yapi/vendors
 
 EXPOSE 8866
 
